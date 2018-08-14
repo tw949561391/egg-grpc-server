@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package example;
+package example.demo;
 
 service Test {
   rpc Echo (TestRequest) returns (TestResponse) {}
