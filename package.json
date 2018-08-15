@@ -1,6 +1,6 @@
 {
   "name": "egg-grpc-server",
-  "version": "1.5.8",
+  "version": "1.6.2",
   "description": "",
   "eggPlugin": {
     "name": "grpcServer"
@@ -49,12 +49,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-grpc-server.git"
+    "url": "git+https://github.com/tw949561391/egg-grpc-server.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/tw949561391/egg-grpc-server/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-grpc-server#readme",
+  "homepage": "https://github.com/tw949561391/egg-grpc-server#readme",
   "author": "",
   "license": "MIT"
 }

@@ -44,8 +44,21 @@ exports.grpcServer = {
 
 ```js
 // {app_root}/config/config.default.js
+
 exports.grpcServer = {
+    proto: 'grpc',  //*.proto path
+    extend: 'grpc', //service path
+    host: '0.0.0.0',
+    port: '50051',
+    loaderOption: {
+        keepCase: true,
+        longs: String,
+        enums: String,
+        defaults: true,
+        oneofs: true
+    }
 };
+
 ```
 
 see [config/config.default.js](config/config.default.js) for more detail.
@@ -53,6 +66,8 @@ see [config/config.default.js](config/config.default.js) for more detail.
 ## Example
 
 <!-- example here -->
+
+see [demo](https://github.com/tw949561391/egg-grpc-server/tree/master/test/fixtures/apps/grpc-server-test/app/grpc) for more detail.
 
 ## Questions & Suggestions
 
