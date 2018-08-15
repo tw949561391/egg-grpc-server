@@ -1,5 +1,5 @@
 'use strict';
-const BaseRpc = require('../../../../../../../index').BaseGrpc;
+const BaseRpc = require('../../../../../../../../index').BaseGrpc;
 
 module.exports = class Test extends BaseRpc {
 
