@@ -27,6 +27,7 @@ Description here.
 ## Install
 
 ```bash
+$ npm i grpc -g
 $ npm i egg-grpc-server --save
 ```
 
@@ -46,8 +47,8 @@ exports.grpcServer = {
 // {app_root}/config/config.default.js
 
 exports.grpcServer = {
-    proto: 'grpc',  //*.proto path
-    extend: 'grpc', //service path
+    protoPath: 'app/grpc',  //*.proto path
+    extendPath: 'app/grpc', //service path
     host: '0.0.0.0',
     port: '50051',
     loaderOption: {
@@ -66,8 +67,59 @@ see [config/config.default.js](config/config.default.js) for more detail.
 ## Example
 
 <!-- example here -->
+```js
+// {app_root}/app/grpc/ProfileService.proto
+    syntax = "proto3";
+    
+    package passport.auth;
+    
+    service AuthService {
+        rpc roles (UserReq) returns (UserRes) {
+    
+        }
+    }
+    
+    message UserReq {
+        string userId = 1;
+        string clientId = 2;
+    }
+    
+    message UserRes{
+        string userId = 1;
+        string clientId = 2;
+    }
+    
+    
+    // {app_root}/app/grpc/passport/profile/ProfileService.js
+    const BaseGrpc = require('egg-grpc-server').BaseGrpc;
+    
+    class ProfileService extends BaseGrpc {
+        async getUserInfo() {
+            this.app.coreLogger.info("echo");
+            const params = this.call.request;
+            const user = await this.app.model.User.findOne({where: {userId: params.userId}});
+            if (!user) throw  new Error('user_none');
+            return {
+                userId: user.userId,
+                username: user.username,
+                nickname: user.nickname,
+                avatar: user.avatar,
+                gender: user.gender
+            }
+        }
+    }
+
+module.exports = ProfileService;
+
+```
+
 
 see [demo](https://github.com/tw949561391/egg-grpc-server/tree/master/test/fixtures/apps/grpc-server-test/app/grpc) for more detail.
+
+
+## client
+Please open an issue [egg-grpc-client](https://www.npmjs.com/package/egg-grpc-client).
+
 
 ## Questions & Suggestions
 
