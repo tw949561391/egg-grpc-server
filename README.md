@@ -109,7 +109,9 @@ see [config/config.default.js](config/config.default.js) for more detail.
         }
     }
 
-module.exports = ProfileService;
+    module.exports = ProfileService;
+    
+     // {app_root}/app/grpc/[passport/profile/]ProfileService.js ==  `package passport.profile` in *.proto ;
 
 ```
 
@@ -123,7 +125,7 @@ Please open an issue [egg-grpc-client](https://www.npmjs.com/package/egg-grpc-cl
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/eggjs/egg/issues).
+Please open an issue [here](https://github.com/tw949561391/egg-grpc-server/issues).
 
 ## License
 
