@@ -6,8 +6,8 @@
  * @property {String} SOME_KEY - some description
  */
 exports.grpcServer = {
-    proto: 'grpc',
-    extend: 'grpc',
+    proto: 'app/grpc',
+    extend: 'app/grpc',
     host: '0.0.0.0',
     port: '50051',
     loaderOption: {
